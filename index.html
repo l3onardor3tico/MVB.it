@@ -17,8 +17,9 @@
   </section>
 
   <!-- HERO (COPERTINA) -->
-  <header class="hero">
-    <img src="assets/img/copertina.png" alt="Copertina">
+  <header class="hero" id="hero">
+    <img src="assets/img/copertina.png" alt="Copertina"
+         onerror="this.src='copertina.png'">
     <div class="hero-text">
       <h1>Bar Scolastico</h1>
       <p>Il punto di ritrovo della scuola</p>
@@ -28,18 +29,29 @@
   <!-- INTRODUZIONE -->
   <section class="section">
     <h2>Chi siamo</h2>
-    <img src="assets/img/introduzione.png" alt="Introduzione" class="menu-img">
+    <img src="assets/img/introduzione.png" alt="Introduzione"
+         class="menu-img"
+         onerror="this.src='introduzione.png'">
   </section>
 
   <!-- CATALOGO -->
   <section class="section light">
     <h2>Menù</h2>
 
-    <img src="assets/img/catalogo1.png" class="menu-img" alt="Catalogo 1">
-    <img src="assets/img/catalogo2.png" class="menu-img" alt="Catalogo 2">
-    <img src="assets/img/catalogo3.png" class="menu-img" alt="Catalogo 3">
-    <img src="assets/img/catalogo4.png" class="menu-img" alt="Catalogo 4">
-    <img src="assets/img/catalogo5.png" class="menu-img" alt="Catalogo 5">
+    <img src="assets/img/catalogo1.png" class="menu-img"
+         onerror="this.src='catalogo1.png'">
+
+    <img src="assets/img/catalogo2.png" class="menu-img"
+         onerror="this.src='catalogo2.png'">
+
+    <img src="assets/img/catalogo3.png" class="menu-img"
+         onerror="this.src='catalogo3.png'">
+
+    <img src="assets/img/catalogo4.png" class="menu-img"
+         onerror="this.src='catalogo4.png'">
+
+    <img src="assets/img/catalogo5.png" class="menu-img"
+         onerror="this.src='catalogo5.png'">
 
   </section>
 
@@ -53,7 +65,9 @@
   <!-- FINALE -->
   <section class="section light">
     <h2>Grazie!</h2>
-    <img src="assets/img/finale.png" alt="Finale" class="menu-img">
+    <img src="assets/img/finale.png" alt="Finale"
+         class="menu-img"
+         onerror="this.src='finale.png'">
   </section>
 
   <!-- FOOTER -->
@@ -63,12 +77,17 @@
 
   <!-- SCRIPT -->
   <script>
+    // Carica username
     window.onload = function() {
       const username = localStorage.getItem("username");
+
       if (username) {
         document.getElementById("usernameDisplay").innerText =
           "Benvenuto, " + username + "!";
         document.getElementById("usernameInput").value = username;
+
+        // 🔥 scroll automatico alla copertina
+        document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
       }
     };
 
@@ -84,6 +103,9 @@
 
       document.getElementById("usernameDisplay").innerText =
         "Benvenuto, " + username + "!";
+
+      // 🔥 scroll automatico alla copertina
+      document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
     }
   </script>
 
