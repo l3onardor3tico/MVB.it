@@ -32,14 +32,14 @@ body {
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  border-radius: 12px;
 }
 
 /* SEZIONI */
 .section {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -48,14 +48,66 @@ body {
 }
 
 .section h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
 }
 
+/* IMMAGINI */
 .menu-img {
   max-width: 90%;
-  margin-top: 20px;
-  border-radius: 10px;
+  margin: 20px auto;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* GRIGLIA CATALOGO */
+.section.light img {
+  max-width: 300px;
+}
+
+.section.light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section.light h2 {
+  width: 100%;
+}
+
+/* USERNAME */
+input {
+  padding: 10px;
+  width: 200px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#usernameDisplay {
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 /* FOOTER */
@@ -63,5 +115,29 @@ footer {
   background-color: #222;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
+}
+
+/* RESPONSIVE (telefono) */
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .menu-img {
+    max-width: 95%;
+  }
+
+  input {
+    width: 80%;
+  }
 }
