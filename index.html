@@ -8,28 +8,39 @@
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- USERNAME -->
+  <section class="section light">
+    <h2>Il tuo profilo</h2>
+    <input type="text" id="usernameInput" placeholder="Inserisci il tuo username">
+    <button onclick="salvaUsername()">Salva</button>
+    <p id="usernameDisplay"></p>
+  </section>
+
+  <!-- HERO (COPERTINA) -->
   <header class="hero">
-    <img src="assets/img/hero.png" alt="Bar scolastico">
+    <img src="assets/img/copertina.png" alt="Copertina">
     <div class="hero-text">
       <h1>Bar Scolastico</h1>
       <p>Il punto di ritrovo della scuola</p>
     </div>
   </header>
 
-  <!-- CHI SIAMO -->
+  <!-- INTRODUZIONE -->
   <section class="section">
     <h2>Chi siamo</h2>
-    <p>
-      Il bar scolastico offre colazioni, snack e bevande per studenti e docenti,
-      in un ambiente accogliente e informale.
-    </p>
+    <img src="assets/img/introduzione.png" alt="Introduzione" class="menu-img">
   </section>
 
-  <!-- MENU -->
+  <!-- CATALOGO -->
   <section class="section light">
     <h2>Menù</h2>
-    <img src="assets/img/menu.png" alt="Menù del bar" class="menu-img">
+
+    <img src="assets/img/catalogo1.png" class="menu-img" alt="Catalogo 1">
+    <img src="assets/img/catalogo2.png" class="menu-img" alt="Catalogo 2">
+    <img src="assets/img/catalogo3.png" class="menu-img" alt="Catalogo 3">
+    <img src="assets/img/catalogo4.png" class="menu-img" alt="Catalogo 4">
+    <img src="assets/img/catalogo5.png" class="menu-img" alt="Catalogo 5">
+
   </section>
 
   <!-- ORARI -->
@@ -39,10 +50,42 @@
     <p>08:00 – 14:00</p>
   </section>
 
+  <!-- FINALE -->
+  <section class="section light">
+    <h2>Grazie!</h2>
+    <img src="assets/img/finale.png" alt="Finale" class="menu-img">
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <p>© 2025 Bar Scolastico</p>
   </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    window.onload = function() {
+      const username = localStorage.getItem("username");
+      if (username) {
+        document.getElementById("usernameDisplay").innerText =
+          "Benvenuto, " + username + "!";
+        document.getElementById("usernameInput").value = username;
+      }
+    };
+
+    function salvaUsername() {
+      const username = document.getElementById("usernameInput").value;
+
+      if (username.trim() === "") {
+        alert("Inserisci uno username valido!");
+        return;
+      }
+
+      localStorage.setItem("username", username);
+
+      document.getElementById("usernameDisplay").innerText =
+        "Benvenuto, " + username + "!";
+    }
+  </script>
 
 </body>
 </html>
